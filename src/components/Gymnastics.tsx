@@ -6,19 +6,19 @@ export default function Gymnastics() {
     {
       title: "METABOLIZM",
       subtitle: "YENGIL HARAKAT",
-      imgSrc: "/metabolism.png",
+      imgSrc: "/meto.png",
       color: "from-red-50 to-red-100",
     },
     {
       title: "GLYUKOZA",
       subtitle: "NAZORAT MASHQLARI",
-      imgSrc: "/glucose-exercise.png",
+      imgSrc: "/glyu.png",
       color: "from-gray-50 to-gray-100",
     },
     {
       title: "ENERGİYA",
       subtitle: "TONUSNI TIKLASH",
-      imgSrc: "/energy.png",
+      imgSrc: "/fast.png",
       color: "from-red-100 to-red-200",
     },
   ];

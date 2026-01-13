@@ -116,7 +116,7 @@ export default function Usage() {
         <div className="w-full md:w-1/2 relative">
           <div className="relative aspect-[5/4] md:aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl border-4 border-white bg-gray-50">
             <Image
-              src="/usage-diastop.png"
+              src="/qabul.png"
               alt="Diastop Usage"
               fill
               className="object-cover"

@@ -11,21 +11,21 @@ export default function Articles() {
       title: "Qand va to'g'ri parhez",
       description:
         "Glyukemik indeksi past mahsulotlar yordamida qondagi qand miqdorini tabiiy nazorat qilish usullari.",
-      imgSrc: "/art1.png",
+      imgSrc: "/qand.png",
       category: "PARHEZ",
     },
     {
       title: "Oshqozon osti bezi",
       description:
         "Insulin ishlab chiqarishni yaxshilash va organ faoliyatini tiklash bo'yicha mutaxassis tavsiyalari.",
-      imgSrc: "/art2.png",
+      imgSrc: "/oshqozon.png",
       category: "TIBBIYOT",
     },
     {
       title: "Diabet profilaktikasi",
       description:
         "Kundalik faollik va to'g'ri ozuqa majmualari orqali asoratlar xavfini 50% ga kamaytirish sirlari.",
-      imgSrc: "/art3.png",
+      imgSrc: "/diabet.png",
       category: "SOG'LOM HAYOT",
     },
   ];

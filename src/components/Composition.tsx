@@ -74,10 +74,10 @@ export default function Composition() {
               <div className="absolute inset-0 bg-[#CC1D24]/5 rounded-full blur-[60px]" />
               <div className="relative w-full h-full bg-white rounded-full shadow-[0_20px_60px_rgba(0,0,0,0.1)] flex items-center justify-center p-4 border border-gray-100">
                 <Image
-                  src="/diastop-composition.png" // Bu yerda o'simliklar yoki mahsulot rasmi bo'ladi
+                  src="/object.png" // Bu yerda o'simliklar yoki mahsulot rasmi bo'ladi
                   alt="Diastop Composition"
                   fill
-                  className="object-contain p-6 transition-transform duration-700 hover:rotate-6 hover:scale-105"
+                  className="object-cover rounded-[50%] p-6 transition-transform duration-700 hover:rotate-6 hover:scale-105"
                 />
               </div>
             </div>

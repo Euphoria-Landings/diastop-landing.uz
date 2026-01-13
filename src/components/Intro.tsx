@@ -67,13 +67,13 @@ export default function Intro() {
               {/* Dekorativ aylana */}
               <div className="absolute inset-0 bg-[#CC1D24]/5 rounded-full blur-[100px] animate-pulse" />
 
-              <div className="relative w-full h-full rounded-[50px] overflow-hidden border border-gray-100 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] bg-white/80 backdrop-blur-sm flex items-center justify-center p-8">
+              <div className="relative w-full h-full rounded-[50px] overflow-hidden border border-gray-100 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] bg-white/80 backdrop-blur-sm flex items-center justify-center ">
                 {/* Asosiy rasm: Diastop-main.png (Masalan: Tabiiy tarkib yoki natija ko'rsatilgan rasm) */}
                 <Image
-                  src="/diastop-main.png"
+                  src="/intro.png"
                   alt="Diastop sog'liq"
                   fill
-                  className="object-contain p-12 hover:scale-110 transition-transform duration-700 ease-out"
+                  className="object-cover  hover:scale-110 transition-transform duration-700 ease-out"
                   priority
                 />
               </div>
@@ -82,7 +82,7 @@ export default function Intro() {
               <div className="absolute -bottom-10 -left-6 md:-left-16 z-20 w-[190px] md:w-[300px] drop-shadow-[0_25px_25px_rgba(0,0,0,0.25)]">
                 <div className="relative aspect-[1/1.1] rounded-[32px] border-[8px] border-white overflow-hidden shadow-2xl bg-white transition-all duration-500 hover:rotate-2 hover:scale-105">
                   <Image
-                    src="/diastop-box.png"
+                    src="/intro2.png"
                     alt="Diastop Packaging"
                     fill
                     className="object-cover"

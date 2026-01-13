@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 mt-5 ${
           scrolled ? "py-2 mt-0" : "py-4 md:py-6 mt-2 md:mt-4"
         }`}
       >
@@ -69,13 +69,6 @@ export default function Navbar() {
                   {item.name}
                 </Link>
               ))}
-
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="ml-2 px-5 py-2 bg-gray-50 hover:bg-[#CC1D24] text-[#CC1D24] hover:text-white border border-[#CC1D24]/10 rounded-full text-[10px] font-black uppercase tracking-widest transition-all"
-              >
-                SOTIB OLISH
-              </button>
             </div>
 
             {/* 3. MOBILE ACTION & BURGER */}
