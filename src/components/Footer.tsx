@@ -36,7 +36,7 @@ export default function MainFooter() {
                   href="tel:+998712000000"
                   className="text-[#CC1D24] text-lg md:text-xl font-[1000] block hover:text-white transition-colors tracking-tighter"
                 >
-                  +998 (71) 200-00-00
+               +998 (55) 517-01-47
                 </a>
               </div>
             </div>
