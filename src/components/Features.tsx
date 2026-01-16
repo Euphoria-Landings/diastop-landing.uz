@@ -3,13 +3,13 @@
 export default function Features() {
   const features = [
     {
-      text: "Qon tarkibidagi qand miqdorini pasaytirish",
+      text: "uglevod almashinuvini qo‘llab-quvvatlash",
     },
     {
-      text: "Metabolizmni va modda almashinuvini yaxshilash",
+      text: "kurs qabuli uchun mos",
     },
     {
-      text: "Oshqozon osti bezi faoliyatini qo'llab-quvvatlash",
+      text: "tabiiy tarkib",
     },
   ];
 

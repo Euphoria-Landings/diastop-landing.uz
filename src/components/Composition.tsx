@@ -5,22 +5,24 @@ export default function Composition() {
   // Diabetga qarshi asosiy xususiyatlar
   const mainFeatures = {
     vessels: [
-      "Qondagi glyukoza miqdorini tabiiy barqarorlashtiradi",
-      "Hujayralarning insulinga sezgirligini oshiradi",
+      "qonda qand miqdorini me’yorda ushlab turishga yordam beradi.",
+      "uglevod va energiya almashinuvini qo‘llab-quvvatlaydi.",
+      "umumiy metabolik muvozanatni ta’minlaydi",
+      "qon tomir va umumiy holatni qo‘llab-quvvatlaydi",
     ],
     complex: [
-      "Inulin — metabolizmni va ovqat hazm qilishni yaxshilaydi",
-      "Xrom pikolinat — shirinlikka bo'lgan ehtiyojni kamaytiradi",
-      "S vitamini — immunitet va tomirlar himoyasi uchun",
+      "vitaminlar",
+      "mikro va makroelementlar",
+      "antioksidant komponentlar",
     ],
   };
 
   // Diabetga qarshi o'simliklar va minerallar
   const components = [
-    { name: "Inulin", desc: "Qand nazorati" },
-    { name: "Xrom", desc: "Metabolizm" },
-    { name: "Steviya", desc: "Tabiiy shirinlik" },
-    { name: "B Majmuasi", desc: "Energiya manbai" },
+    { name: "o‘simlik ekstraktlari", desc: "Qand nazorati" },
+    { name: "vitaminlar", desc: "A, E, D, B guruhlari" },
+    { name: "antioksidant", desc: "komponentlar" },
+    { name: "mikro", desc: "va makroelementlar" },
   ];
 
   return (
@@ -38,7 +40,11 @@ export default function Composition() {
             <span className="text-[#CC1D24]">P</span> TARKIBI
           </h2>
           <p className="text-gray-400 font-bold mt-4 uppercase text-[10px] tracking-[4px]">
-            100% Tabiiy va xavfsiz komponentlar
+            DIASTOP - bu ovqatga biologik faol qo‘shimcha bo‘lib, organizmning
+            normal uglevod almashinuvi va funksional holatini qo‘llab-quvvatlash
+            uchun ishlab chiqilgan. Vitaminlar, mikroelementlar va o‘simlik
+            komponentlari majmuasi sog‘lom turmush tarzi doirasida qondagi qand
+            miqdorini barqaror saqlashga yordam beradi.
           </p>
         </div>
 
@@ -47,10 +53,10 @@ export default function Composition() {
           <div className="w-full lg:w-[380px] bg-white rounded-[40px] p-8 md:p-10 shadow-[0_15px_50px_rgba(0,0,0,0.03)] border border-gray-50 transition-all duration-500 hover:border-[#CC1D24]/20 hover:shadow-red-600/5">
             <div className="mb-8">
               <h3 className="text-[#CC1D24] text-2xl font-black uppercase italic">
-                NAZORAT
+                Asosiy{" "}
               </h3>
               <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1">
-                Glyukoza balansi
+                xususiyatlari{" "}
               </p>
               <div className="h-1 w-12 bg-[#CC1D24] mt-3 rounded-full" />
             </div>
@@ -104,10 +110,10 @@ export default function Composition() {
           <div className="w-full lg:w-[380px] bg-white rounded-[40px] p-8 md:p-10 shadow-[0_15px_50px_rgba(0,0,0,0.03)] border border-gray-50 transition-all duration-500 hover:border-[#CC1D24]/20 hover:shadow-red-600/5">
             <div className="mb-8">
               <h3 className="text-[#CC1D24] text-2xl font-black uppercase italic">
-                KOMPLEKS
+                Tarkibi
               </h3>
               <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1">
-                Metabolik quvvat
+              DIASTOP tarkibiga kelib chiqishi tabiiy bo‘lgan biologik faol komponentlar kiradi, jumladan:
               </p>
               <div className="h-1 w-12 bg-[#CC1D24] mt-3 rounded-full" />
             </div>

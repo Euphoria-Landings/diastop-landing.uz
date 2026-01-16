@@ -12,36 +12,22 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
   const [snackbar, setSnackbar] = useState({ isVisible: false, message: "" });
 
-  const showNotice = (msg: string) => {
-    setSnackbar({ isVisible: true, message: msg });
-  };
-
-  useEffect(() => {
-    if (snackbar.isVisible) {
-      const timer = setTimeout(() => {
-        setSnackbar({ ...snackbar, isVisible: false });
-      }, 4000);
-      return () => clearTimeout(timer);
-    }
-  }, [snackbar.isVisible]);
-
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
       setStatus("idle");
       setFormData({ name: "", phone: "" });
+      setSnackbar({ isVisible: false, message: "" });
     } else {
       document.body.style.overflow = "auto";
     }
   }, [isOpen]);
 
-  // Ism validatsiyasi
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]/g, "");
     setFormData({ ...formData, name: value });
   };
 
-  // Telefon formatlash (+998 ...)
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value.replace(/\D/g, "");
     if (!value.startsWith("998")) value = "998" + value.slice(0, 9);
@@ -62,17 +48,11 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
     const digitsOnly = formData.phone.replace(/\D/g, "");
 
     if (digitsOnly.length !== 12) {
-      showNotice("Raqamni to'liq kiriting!");
+      setSnackbar({ isVisible: true, message: "Raqamni to'liq kiriting!" });
       return;
     }
 
     setStatus("loading");
-
-    const payload = {
-      full_name: formData.name,
-      phone_number: `+${digitsOnly}`,
-      product_name: "Diastop", // Mahsulot nomi o'zgartirildi
-    };
 
     try {
       const response = await fetch(
@@ -80,19 +60,33 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
+          body: JSON.stringify({
+            full_name: formData.name,
+            phone_number: `+${digitsOnly}`,
+            product_name: "Diastop",
+          }),
         }
       );
 
       if (response.ok) {
         setStatus("success");
         setTimeout(() => onClose(), 3000);
+      } else if (response.status === 429) {
+        setStatus("idle");
+        setSnackbar({
+          isVisible: true,
+          message:
+            "Siz allaqachon ariza qoldirgansiz. Iltimos, 1 soatdan keyin qayta urinib ko'ring.",
+        });
       } else {
         throw new Error();
       }
     } catch (error) {
       setStatus("idle");
-      showNotice("Server bilan bog'lanishda xatolik!");
+      setSnackbar({
+        isVisible: true,
+        message: "Server bilan bog'lanishda xatolik!",
+      });
     }
   };
 
@@ -107,7 +101,6 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
       />
 
       <div className="relative w-full max-w-[420px] bg-white rounded-[40px] shadow-2xl overflow-hidden border border-white/10">
-        {/* Progress Bar */}
         <div
           className={`h-1.5 w-full transition-all duration-500 ${
             formData.name.length > 2 && formData.phone.length > 18
@@ -144,7 +137,6 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
             </div>
           ) : (
             <>
-              {/* DIASTØP Custom Logo */}
               <div className="text-center mb-10">
                 <h2 className="text-3xl md:text-4xl font-[1000] italic tracking-tighter text-[#1A1A1A] uppercase flex items-center justify-center">
                   <span>DIA</span>
@@ -161,27 +153,23 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="relative">
-                  <input
-                    required
-                    type="text"
-                    placeholder="Ismingiz"
-                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-[#CC1D24]/20 focus:bg-white transition-all outline-none font-bold text-[#1A1A1A] text-sm"
-                    value={formData.name}
-                    onChange={handleNameChange}
-                  />
-                </div>
+                <input
+                  required
+                  type="text"
+                  placeholder="Ismingiz"
+                  className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-[#CC1D24]/20 focus:bg-white transition-all outline-none font-bold text-[#1A1A1A] text-sm"
+                  value={formData.name}
+                  onChange={handleNameChange}
+                />
 
-                <div className="relative">
-                  <input
-                    required
-                    type="tel"
-                    placeholder="+998 (__) ___ __ __"
-                    className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-[#CC1D24]/20 focus:bg-white transition-all outline-none font-bold text-[#1A1A1A] text-sm"
-                    value={formData.phone}
-                    onChange={handlePhoneChange}
-                  />
-                </div>
+                <input
+                  required
+                  type="tel"
+                  placeholder="+998 (__) ___ __ __"
+                  className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-[#CC1D24]/20 focus:bg-white transition-all outline-none font-bold text-[#1A1A1A] text-sm"
+                  value={formData.phone}
+                  onChange={handlePhoneChange}
+                />
 
                 <button
                   disabled={status === "loading" || formData.name.length < 2}
@@ -194,7 +182,6 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
           )}
         </div>
 
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-6 right-6 text-gray-300 hover:text-[#CC1D24] transition-colors p-2"

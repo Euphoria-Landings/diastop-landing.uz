@@ -38,9 +38,9 @@ export default function Intro() {
 
             <div className="flex items-start gap-4 max-w-[450px] mb-10 border-l-4 border-[#CC1D24] pl-5 bg-gray-50/50 py-5 pr-4 rounded-r-3xl">
               <p className="text-[#333] text-[13px] md:text-[15px] leading-relaxed font-bold uppercase tracking-tight">
-                Qon tarkibidagi glyukozani normallashtirish va
-                <span className="text-[#CC1D24]"> hayot sifatini </span>
-                oshirish uchun innovatsion vitakompleks.
+                Uglevod almashinuvi va umumiy metabolik muvozanatni
+                qo‘llab-quvvatlash uchun vitamin-o‘simlik kompleksi bilan
+                biologik faol qo‘shimcha.
               </p>
             </div>
 

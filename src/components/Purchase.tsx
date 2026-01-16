@@ -85,7 +85,7 @@ export default function Purchase() {
           </h2>
           <div className="h-0.5 w-16 bg-[#CC1D24] rounded-full opacity-50" />
           <p className="text-gray-400 font-black tracking-[3px] uppercase text-[8px] md:text-[9px]">
-            Qand miqdorini nazorat qilish va hayot sifatini tiklash
+            Eng yaxshi samaraga muntazam ravishda muvozanatli ovqatlanish va mutaxassis tavsiyalari bilan birgalikda qabul qilinganda erishiladi.
           </p>
         </div>
 
